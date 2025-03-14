@@ -1,0 +1,725 @@
+button {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+/* Header */
+.btnExit {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  background-color: rgba(0, 0, 0, 0.7);
+  background-image: url('/src/assets//images/speak/ico_delete_white.svg');
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+  transition: all 0.2s;
+  &.mobile {
+    width: 40px;
+    height: 40px;
+    background-size: 24px;
+  }
+  &.active {
+    transform: scale(0.9);
+  }
+}
+
+.screenBlock {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba($color: #000000, $alpha: 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-position: center;
+  background-size: cover;
+  .screenBgColor {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba($color: #000000, $alpha: 0.7);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+  }
+}
+.speakButtonArea {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  .startButton {
+    cursor: pointer;
+    min-width: 250px;
+    width: 100%;
+    height: 50px;
+    background-color: #ff274f;
+    color: white;
+    font-weight: 500;
+    font-size: 1.2em;
+    border-radius: 15px;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    position: relative;
+    z-index: 2;
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+  .recAni {
+    position: absolute;
+    z-index: 1;
+    width: 200px;
+    height: 200px;
+    opacity: 0.5;
+  }
+}
+
+.speackBodyBg {
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  .speackBodyBgColor {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba($color: #000000, $alpha: 0.7);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+  }
+}
+
+/* Body */
+.speakBody {
+  width: 100vw;
+  height: calc(100dvh - 60px);
+  display: flex;
+  justify-content: center;
+  position: relative;
+  &::after {
+    content: '잠시만 기다려 주세요. \A Speak 엔진을 활성화하는 중입니다. \A (작업 완료까지 최대 1분 정도 소요됩니다.)';
+    white-space: pre;
+    text-align: center;
+    color: #fff;
+    font-size: 1.2em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -1;
+  }
+  .ebookViewer {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    transform-origin: top center;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    // border-radius: 15px;
+    overflow: hidden;
+    margin-top: 15px;
+    &.mobile {
+      border: none;
+      border-radius: 0;
+      margin-top: 0;
+    }
+  }
+}
+
+.speakEbookPage {
+  color: #fff;
+  position: relative;
+  background-repeat: no-repeat;
+  &.levelK {
+    width: 480px;
+    height: 750px;
+    background-size: 480px 750px;
+  }
+  &.level1 {
+    width: 525px;
+    height: 750px;
+    background-size: 525px 750px;
+  }
+  &.level2 {
+    width: 525px;
+    height: 750px;
+    background-size: 525px 750px;
+  }
+}
+
+/* Play Bar */
+.playBar {
+  width: 100%;
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  color: #fff;
+  font-family: Rg-B, sans-serif;
+  position: relative;
+  padding-bottom: env(safe-area-inset-bottom);
+  .progress {
+    width: 100%;
+    height: 4px;
+    background-color: rgba(0, 0, 0, 0.15);
+    .progressBar {
+      height: 4px;
+      border-radius: 100px;
+      background-color: #d95355;
+    }
+  }
+  .recProgress {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    background-color: rgba($color: #2ccd70, $alpha: 0.5);
+  }
+}
+
+.runReady {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+  animation-duration: 0.2s;
+  position: relative;
+  z-index: 2;
+  .txtSome {
+    display: block;
+    padding-top: 2px;
+    color: rgba(255, 255, 255, 0.3);
+    font-family: Rg-B;
+  }
+}
+
+.btnSpeakPlay {
+  min-width: 150px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 1.1em;
+  transition: all 0.2s;
+  cursor: pointer;
+  &.active {
+    transform: scale(0.9);
+  }
+  .icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+    background-size: 40px;
+    background-position: center;
+    background-repeat: no-repeat;
+    &.icon.play {
+      background-image: url('/src/assets/images/speak/btn_play.svg');
+    }
+    &.record {
+      background-image: url('/src/assets/images/speak/ico_rec.svg');
+    }
+  }
+  .txtWord {
+    display: block;
+    padding-top: 2px;
+    color: #fff;
+    font-family: Rg-B;
+  }
+}
+
+.runEbookAudioPlay {
+  animation-duration: 0.2s;
+  color: #fff;
+  height: 40px;
+  position: relative;
+}
+
+.runVoiceRecord {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  animation-duration: 0.2s;
+  .txtLabel {
+    display: flex;
+    align-items: center;
+    padding-top: 3px;
+  }
+}
+
+.runVoicePlay {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation-duration: 0.2s;
+  position: relative;
+  .lottieVoicePlay {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: -10px;
+  }
+}
+
+.runCorrectSign {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 999;
+  width: 100%;
+  height: 60px;
+  background-color: #3ab6ff;
+  font-family: Rg-B;
+  font-size: 1.5em;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation-duration: 0.2s;
+}
+.runIncorrectSign {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 999;
+  width: 100%;
+  height: 60px;
+  background-color: #d04e50;
+  font-family: Rg-B;
+  font-size: 1.5em;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation-duration: 0.2s;
+}
+
+.t {
+  position: absolute;
+  transform: scale(0.25);
+  transform-origin: top left;
+  white-space: nowrap;
+}
+
+.result {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .groupResultMark {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .txt {
+      color: #fff;
+      font-family: Rg-B, sans-serif;
+      font-size: 3em;
+      font-weight: 600;
+      &.mobile {
+        font-size: 2em;
+        position: static;
+      }
+    }
+  }
+}
+
+.popUp {
+  width: calc(100% - 30px);
+  max-width: 800px;
+  height: 70vh;
+  max-height: 550px;
+  background-color: #f0f2f5;
+  border-radius: 20px;
+  padding: 15px;
+  position: relative;
+
+  .row1 {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    .btn {
+      cursor: pointer;
+      padding: 5px 15px 3px;
+      border-radius: 100px;
+      font-family: 'Rg-B', sans-serif;
+      font-size: 1em;
+      display: flex;
+      gap: 5px;
+      align-items: center;
+      transition: all 0.1s;
+      &:active {
+        transform: scale(0.99);
+      }
+      &.gray {
+        border: 1.5px solid #333;
+        color: #333;
+      }
+      &.blue {
+        background-color: #3ab6ff;
+        color: #fff;
+      }
+      &.retry {
+        position: absolute;
+        right: 15px;
+        border: 1px dotted #333;
+        padding: 5px;
+      }
+
+      .iconSpeaker {
+        width: 20px;
+        height: 20px;
+        background-image: url('/src/assets/images/speak/volume.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 20px 20px;
+      }
+      .iconRetry {
+        width: 20px;
+        height: 20px;
+        background-image: url('/src/assets/images/speak/icon_retry.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 20px 20px;
+      }
+    }
+  }
+
+  .row2 {
+    height: calc(100% - 120px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 20px;
+
+    .graph {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 100px;
+      gap: 5px;
+
+      .wrapperProgress {
+        position: absolute;
+        width: 100%;
+        .progressBar {
+          position: absolute;
+          width: 2px;
+          z-index: 10;
+          left: 0%;
+          height: 100px;
+          &.native {
+            background-color: #d2d2d2;
+
+            .progressArrow {
+              position: absolute;
+              bottom: -7px;
+              width: 0;
+              height: 0;
+              left: 50%;
+              transform: translateX(-50%);
+              border-style: solid;
+              border-width: 7px;
+              border-color: transparent transparent #d2d2d2 transparent;
+            }
+          }
+          &.student {
+            background-color: #333333;
+
+            .progressArrow {
+              position: absolute;
+              bottom: -7px;
+              width: 0;
+              height: 0;
+              left: 50%;
+              transform: translateX(-50%);
+              border-style: solid;
+              border-width: 7px;
+              border-color: transparent transparent #333 transparent;
+            }
+          }
+        }
+      }
+    }
+
+    .sentence {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 5px;
+
+      .word {
+        font-size: 1.5em;
+        font-weight: 500;
+        &.red {
+          color: #ff274f;
+        }
+      }
+    }
+
+    .phonemes {
+      max-width: calc(100% - 30px);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 5px;
+      background-color: #fff;
+      border-radius: 20px;
+      padding: 15px;
+      overflow-x: scroll;
+      .wordContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        background-color: #f0f2f5;
+        padding: 5px 10px;
+        border-radius: 10px;
+
+        .row1 {
+          text-align: center;
+          font-size: 1.25em;
+          font-weight: 500;
+        }
+
+        .row2 {
+          // min-height: 30px;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          justify-content: center;
+          align-items: center;
+          gap: 3px;
+          transition: all 0.2s;
+
+          .phonemeResult {
+            .phoneme {
+              font-size: 0.8em;
+              font-weight: 500;
+              background-color: #333;
+              color: #fff;
+              border-radius: 5px;
+              padding: 2px 5px;
+              &.red {
+                background-color: #ff274f;
+              }
+              &.orange {
+                background-color: #ffc148;
+              }
+              &.green {
+                background-color: #2ccd70;
+              }
+            }
+
+            .phonemeScore {
+              font-size: 0.5em;
+              color: #999;
+              width: 100%;
+              text-align: center;
+              margin-top: 3px;
+            }
+          }
+        }
+      }
+    }
+
+    @media (pointer: coarse) and (hover: none) {
+      .phonemes {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+      }
+    }
+
+    .btnToggle {
+      cursor: pointer;
+      font-size: 0.8em;
+      font-family: 'Rg-B', sans-serif;
+      padding: 5px 5px 3px 12px;
+      border-radius: 100px;
+      background-color: #333;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      .icoChev {
+        width: 18px;
+        height: 18px;
+        background-image: url('/src/assets/images/icons/icon_chev_down_white.svg');
+        background-size: 18px 18px;
+        background-position: center;
+        background-repeat: no-repeat;
+        transform: rotate(0);
+        transition: all 0.2s;
+        &.rotate {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
+  .row3 {
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0 0 20px 20px;
+    padding: 0 30px;
+    &.goodJob {
+      background-color: #3ab6ff;
+    }
+    &.tryAgain {
+      background-color: #ff2424;
+    }
+
+    .txt {
+      color: #fff;
+      font-family: 'Rg-B', sans-serif;
+      font-size: 1.25em;
+      font-weight: 600;
+    }
+
+    .iconArrow {
+      width: 24px;
+      height: 24px;
+      background-image: url('/src/assets/images/speak/chev_right.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 24px 24px;
+    }
+  }
+}
+
+.wrapperResult {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba($color: #000000, $alpha: 0.7);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    background-color: rgba($color: #000000, $alpha: 0.7);
+  }
+  .resultMark {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .txt {
+      color: #fff;
+      font-family: Rg-B, sans-serif;
+      font-size: 3em;
+      font-weight: 600;
+    }
+  }
+  &.mobile {
+    .txt {
+      font-size: 2em;
+      position: static;
+    }
+  }
+}
+
+.btnExitResult {
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  background-color: rgba($color: #000000, $alpha: 0.7);
+  background-image: url('/src/assets/images/speak/ico_delete_white.svg');
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+  transition: all 0.2s;
+  &:active {
+    transform: scale(0.9);
+  }
+  &.mobile {
+    &.btn-exit {
+      width: 40px;
+      height: 40px;
+      background-size: 24px;
+    }
+  }
+}
+
+.visualizer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}

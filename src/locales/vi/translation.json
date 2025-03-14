@@ -1,0 +1,97 @@
+{
+  "common": {
+    "네": "Có",
+    "아니오": "Không",
+    "나가기": "Thoát ra",
+    "ReTest 정책으로 당일 재학습 불가": "Quy định ReTest không cho phép làm bài tập lại trong ngày.",
+    "일일 획득 가능 포인트 초과": "Đã vượt quá điểm có thể nhận trong ngày",
+    "앱이 장시간 실행된 상태여서 보안상의 이유로 자동 로그아웃되었습니다. 번거로우시겠지만, 재접속 후 다시 학습을 진행해 주세요.": "For security reasons, you were automatically logged out due to prolonged app usage. Please reconnect to continue your study."
+  },
+
+  "story": {
+    "다시 읽기": "Đọc lại sách",
+    "반복 읽기": "Đọc lại sách",
+    "퀴즈 풀기": "Làm bài tập",
+    "무비 시청": "Xem hoạt hình",
+    "보너스 학습": "Học thêm nữa",
+    "말하기 연습": "Luyện nói",
+
+    "페이지 넘기기": "Lật trang",
+    "읽기 모드": "Chế độ đọc sách",
+    "읽기 속도": "Tốc độ đọc sách",
+    "책장 넘기기": "Lật trang sách",
+    "수동으로 넘기기": "Lật trang bằng tay",
+    "자동으로 넘기기": "Lật trang tự động",
+
+    "Show 도서 별점 주기 팝업!": "Hiển thị pop-up đánh giá sách!",
+
+    "모든 학습을 완료하고 평균 70점을 넘어야 포인트를 획득 할 수 있습니다.": "Bạn phải hoàn thành tất cả các bài tập với điểm số trung bình trên 70 để nhận điểm đọc sách.",
+    "이미 한번 포인트를 획득한 학습입니다.": "Đây là quyển sách đã nhận được <b> điểm đọc sách một lần.",
+    "두번째 학습을 통과하여도 50% 포인트만 획득할 수 있습니다.": "Nếu làm lại bài tập ở lần thứ hai, bạn chỉ có thể nhận được 50% điểm đọc sách.",
+    "이미 두 번 포인트를 획득한 학습입니다.": "Đây là quyển sách đã nhận được điểm đọc sách hai lần.",
+    "계속 학습하시겠습니까?": "Bạn có muốn tiếp tục học không?",
+    "더 이상 포인트를 획득할 수 없습니다.": "<b>Bạn không thể nhận thêm điểm đọc sách khi làm bài tập nữa.</b>",
+    "다시 보기 모드에서는 학습을 완료해도 포인트가 제공되지 않아요.": "Trong chế độ xem lại, bạn sẽ không nhận được điểm đọc sách ngay cả khi bạn hoàn thành bài tập.",
+
+    "책을 완독한 후 학습을 진행할 수 있습니다.": "Có thể tiếp tục làm bài tập sau khi đã đọc sách xong.",
+    "Listen & Repeat 모드가 설정되어 있습니다. (학습 설정에서 변경 가능)": "Có thể tiếp tục làm bài tập sau khi đã đọc sách xong.",
+    "마지막으로 읽은 곳부터 시작할까요?": "Bạn có muốn bắt đầu từ nơi đã đọc lần cuối không?",
+    "책갈피 저장에 실패했습니다.": "Lưu bookmark không thành công.",
+    "Listen & Repeat 모드에서는 지원하지 않는 기능입니다.": "Chức năng này không được hỗ trợ trong chế độ Listen & Repeat."
+  },
+
+  "study": {
+    "획득 포인트": "Điểm đọc sách",
+
+    "이 달의 첨삭": "Chấm bài viết trong tháng này",
+    "첨삭을 받으시겠어요?": "Bạn có muốn yêu cầu chấm bài viết?",
+    "글쓰기 후 첨삭을 받으세요.": "Hãy yêu cầu chấm bài viết sau khi viết xong.",
+    "글쓰기를 하시겠어요?": "Bạn có muốn bắt đầu viết bài không?",
+    "수고했어요! 이달의 남은 첨삭은 모두 사용했어요.": "Bạn đã sử dụng hết quyền yêu cầu chấm bài viết trong tháng này.",
+    "남은 첨삭": "Quyền yêu cầu chấm bài còn lại",
+    "목표 첨삭": "Mục tiêu chấm bài",
+    "첨삭 완료": "Chấm xong bài viết",
+
+    "Re Test는 하루에 한번만 시도할 수 있습니다. 내일 다시 시도해주세요.": "Làm lại bài tập (Retest) chỉ có thể thực hiện một lần trong ngày. Vui lòng thử lại vào ngày mai.",
+
+    "문장을 읽고 빈칸에 들어갈 알맞은 답을 고르세요.": "Read the sentence and pick the right answer for the blank.",
+    "문장을 읽고 빈칸에 들어갈 답을 입력하세요.": "Read the sentence and type in the answer for the blank.",
+    "문장을 듣고 알맞은 카드를 고르세요.": "Listen to the sentence and pick the correct card.",
+
+    "소리를 듣고 알맞은 그림을 고르세요.": "Listen to the sound and pick the correct picture.",
+    "소리를 듣고 알맞은 단어를 고르세요.": "Listen to the sound and pick the correct word.",
+    "소리를 듣고 알맞은 카드를 고르세요.": "Listen to the sound and pick the correct card.",
+
+    "그림을 보고 알맞은 단어를 고르세요.": "Look at the picture and pick the correct word.",
+    "그림을 보고 알맞은 소리를 고르세요.": "Look at the picture and pick the correct sound.",
+    "그림을 보고 알맞은 문장을 고르세요.": "Look at the picture and pick the correct sentence.",
+    "그림과 질문을 보고 알맞은 대답을 고르세요.": "Look at the picture and question, then pick the correct answer.",
+    "그림과 문장의 빈칸을 보고 알맞은 단어를 고르세요.": "Look at the picture and the blank, then choose the correct word.",
+
+    "질문을 보고 알맞은 대답을 고르세요.": "Read the question and pick the correct answer.",
+
+    "나열된 문장을 보고 올바른 순서대로 고르세요.": "Look at the sentences and pick them in the correct order.",
+
+    "지문을 보고 빈칸에 들어갈 알맞은 답을 순서대로 고르세요.": "Read the passage and pick the correct answers for the blanks in order.",
+
+    "문장을 읽고 맞으면 O, 틀리면 X를 누르세요.": "Read the sentence and press O for correct, X for incorrect.",
+
+    "카드를 넘기면서 단어를 학습하세요.": "Look at the pictures and words on the cards to study.",
+    "카드를 순서대로 나열하여 올바른 문장을 완성하세요.": "Arrange the cards in order to complete the correct sentence.",
+
+    "단어를 보고 듣고 따라서 입력하세요.": "Look at the word, listen, and then type it.",
+
+    "뜻을 보고 올바른 단어를 입력하세요.": "Look at the definition and type the correct word.",
+    "뜻을 보고 올바른 단어를 고르세요.": "Look at the definition and choose the correct word.",
+
+    "빈칸이 존재하지 않아야 합니다.": "There should be no blank spaces.",
+
+    "문제를 풀 수 있는 시간이 초과되었습니다. 계속 진행하시겠습니까?": "The time to complete the quiz has expired. Would you like to continue?"
+  },
+
+  "speak": {
+    "인증키가 잘못되었습니다. 리딩게이트로 전화주세요. 1599-0533": "Mã xác thực không chính xác. Vui lòng liên hệ Reading Gate.",
+    "기기의 마이크 사용이 차단되었습니다. 해제 후 다시 사용해주세요.": "Việc sử dụng micro của thiết bị đã bị chặn. Vui lòng bỏ chặn và sử dụng lại.",
+    "마이크 권한을 확인할 수 없습니다.": "Không thể xác nhận quyền truy cập micro."
+  }
+}

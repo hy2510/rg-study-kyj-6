@@ -1,0 +1,97 @@
+{
+  "common": {
+    "네": "Yes",
+    "아니오": "No",
+    "나가기": "Exit",
+    "ReTest 정책으로 당일 재학습 불가": "ReTest policy doesn’t allow re-study on the same day.",
+    "일일 획득 가능 포인트 초과": "You’ve reached your daily point limit.",
+    "앱이 장시간 실행된 상태여서 보안상의 이유로 자동 로그아웃되었습니다. 번거로우시겠지만, 재접속 후 다시 학습을 진행해 주세요.": "For security reasons, you were automatically logged out due to prolonged app usage. Please reconnect to continue your study."
+  },
+
+  "story": {
+    "다시 읽기": "Read Again",
+    "반복 읽기": "Auto-Repeat",
+    "퀴즈 풀기": "Take Quiz",
+    "무비 시청": "Watch Movie",
+    "보너스 학습": "Bonus Study",
+    "말하기 연습": "Speaking Practice",
+
+    "페이지 넘기기": "Turn Page",
+    "읽기 모드": "Read Mode",
+    "읽기 속도": "Speed",
+    "책장 넘기기": "Turn Page",
+    "수동으로 넘기기": "Manual",
+    "자동으로 넘기기": "Auto",
+
+    "Show 도서 별점 주기 팝업!": "Show Book Rating Popup!",
+
+    "모든 학습을 완료하고 평균 70점을 넘어야 포인트를 획득 할 수 있습니다.": "You must complete all steps and achieve an average score of 70 points to earn points.",
+    "이미 한번 포인트를 획득한 학습입니다.": "You have already earned points for this study.",
+    "두번째 학습을 통과하여도 50% 포인트만 획득할 수 있습니다.": "You can only earn 50% of the points even if you pass the second study.",
+    "이미 두 번 포인트를 획득한 학습입니다.": "You have already earned points for this study twice.",
+    "계속 학습하시겠습니까?": "Would you like to continue?",
+    "더 이상 포인트를 획득할 수 없습니다.": "<b>You can no longer earn points.</b>",
+    "다시 보기 모드에서는 학습을 완료해도 포인트가 제공되지 않아요.": "In Review mode, you can’t earn points even if you complete the study.",
+
+    "책을 완독한 후 학습을 진행할 수 있습니다.": "You can start the study after reading the book.",
+    "Listen & Repeat 모드가 설정되어 있습니다. (학습 설정에서 변경 가능)": "You can start the study after reading the book.",
+    "마지막으로 읽은 곳부터 시작할까요?": "Would you like to resume from the last page you read?",
+    "책갈피 저장에 실패했습니다.": "Failed to save the bookmark.",
+    "Listen & Repeat 모드에서는 지원하지 않는 기능입니다.": "This feature is not supported in Listen & Repeat mode."
+  },
+
+  "study": {
+    "획득 포인트": "Earned Points",
+
+    "이 달의 첨삭": "This Month’s Revisions",
+    "첨삭을 받으시겠어요?": "Would you like to submit for revision?",
+    "글쓰기 후 첨삭을 받으세요.": "Submit your writing for revision after completing it.",
+    "글쓰기를 하시겠어요?": "Would you like to start writing?",
+    "수고했어요! 이달의 남은 첨삭은 모두 사용했어요.": "Good job! You’ve used all your revisions for this month.",
+    "남은 첨삭": "Remaining Revisions",
+    "목표 첨삭": "Revision Goal",
+    "첨삭 완료": "Revision Completed",
+
+    "Re Test는 하루에 한번만 시도할 수 있습니다. 내일 다시 시도해주세요.": "You can only re-test once a day. Please try again tomorrow.",
+
+    "문장을 읽고 빈칸에 들어갈 알맞은 답을 고르세요.": "Read the sentence and pick the right answer for the blank.",
+    "문장을 읽고 빈칸에 들어갈 답을 입력하세요.": "Read the sentence and type in the answer for the blank.",
+    "문장을 듣고 알맞은 카드를 고르세요.": "Listen to the sentence and pick the correct card.",
+
+    "소리를 듣고 알맞은 그림을 고르세요.": "Listen to the sound and pick the correct picture.",
+    "소리를 듣고 알맞은 단어를 고르세요.": "Listen to the sound and pick the correct word.",
+    "소리를 듣고 알맞은 카드를 고르세요.": "Listen to the sound and pick the correct card.",
+
+    "그림을 보고 알맞은 단어를 고르세요.": "Look at the picture and pick the correct word.",
+    "그림을 보고 알맞은 소리를 고르세요.": "Look at the picture and pick the correct sound.",
+    "그림을 보고 알맞은 문장을 고르세요.": "Look at the picture and pick the correct sentence.",
+    "그림과 질문을 보고 알맞은 대답을 고르세요.": "Look at the picture and question, then pick the correct answer.",
+    "그림과 문장의 빈칸을 보고 알맞은 단어를 고르세요.": "Look at the picture and the blank, then choose the correct word.",
+
+    "질문을 보고 알맞은 대답을 고르세요.": "Read the question and pick the correct answer.",
+
+    "나열된 문장을 보고 올바른 순서대로 고르세요.": "Look at the sentences and pick them in the correct order.",
+
+    "지문을 보고 빈칸에 들어갈 알맞은 답을 순서대로 고르세요.": "Read the passage and pick the correct answers for the blanks in order.",
+
+    "문장을 읽고 맞으면 O, 틀리면 X를 누르세요.": "Read the sentence and press O for correct, X for incorrect.",
+
+    "카드를 넘기면서 단어를 학습하세요.": "Look at the pictures and words on the cards to study.",
+    "카드를 순서대로 나열하여 올바른 문장을 완성하세요.": "Arrange the cards in order to complete the correct sentence.",
+
+    "단어를 보고 듣고 따라서 입력하세요.": "Look at the word, listen, and then type it.",
+
+    "뜻을 보고 올바른 단어를 입력하세요.": "Look at the definition and type the correct word.",
+    "뜻을 보고 올바른 단어를 고르세요.": "Look at the definition and choose the correct word.",
+
+    "빈칸이 존재하지 않아야 합니다.": "There should be no blank spaces.",
+
+    "문제를 풀 수 있는 시간이 초과되었습니다. 계속 진행하시겠습니까?": "The time to complete the quiz has expired. Would you like to continue?"
+  },
+
+  "speak": {
+    "인증키가 잘못되었습니다. 리딩게이트로 전화주세요. 1599-0533": "The authentication key is incorrect. Please call customer service.",
+    "기기의 마이크 사용이 차단되었습니다. 해제 후 다시 사용해주세요.": "Your device’s microphone is blocked. Please unblock it and try again.",
+    "마이크 권한을 확인할 수 없습니다.": "You don’t have permission to use the microphone."
+  }
+}
