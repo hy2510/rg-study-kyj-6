@@ -40,6 +40,8 @@ import TextQuestion from '@components/study/writing-activity-02/TextQuestion'
 import WritingArea from '@components/study/writing-activity-02/WritingArea'
 import GoNextStepBox from '@components/study/writing-activity-02/GoNextStepBox'
 import StepOutro from '@components/study/writing-activity-02/StepOutro'
+import AiFeedbackReport from '@components/study/writing-activity-02/AiFeedbackReport'
+import GoNextStepAiBox from '@components/study/writing-activity-02/GoNextStepAiBox'
 
 const STEP_TYPE = 'Writing Activity'
 
@@ -416,27 +418,39 @@ export default function WritingActivity2(props: IStudyData) {
                   containerCSS={style.container}
                 >
                   {/* 탭 */}
-                  <WrapperTab
+                  {/* <WrapperTab
                     currentTabIndex={currentTabIndex}
                     questionData={quizData.Writing.Question}
                     changeTabNo={changeTabNo}
-                  />
+                  /> */}
 
                   {/* 탭에 따른 질문 */}
-                  <TextQuestion
+                  {/* <TextQuestion
                     question={quizData.Writing.Question[currentTabIndex]}
-                  />
+                  /> */}
 
                   {/* 글쓰기 영역 */}
-                  <WritingArea
+                  {/* <WritingArea
                     wordMinCount={quizData.Writing.WordMinCount}
                     wordMaxCount={quizData.Writing.WordMaxCount}
                     answerData={answerData[currentTabIndex]}
                     onChangeHandler={onChangeHandler}
-                  />
+                  /> */}
 
                   {/* 하단 버튼 및 글자수 영역 */}
-                  <GoNextStepBox
+                  {/* <GoNextStepBox
+                    isSubmit={isSubmit}
+                    wordMinCount={quizData.Writing.WordMinCount}
+                    wordMaxCount={quizData.Writing.WordMaxCount}
+                    answerLength={getAnswerLength()}
+                    saveAnswer={saveAnswer}
+                    submitAnswer={submitAnswer}
+                    getGEC={getGEC}
+                  /> */}
+
+                  {/* AI 피드백 결과 */}
+                  <AiFeedbackReport />
+                  <GoNextStepAiBox
                     isSubmit={isSubmit}
                     wordMinCount={quizData.Writing.WordMinCount}
                     wordMaxCount={quizData.Writing.WordMaxCount}
