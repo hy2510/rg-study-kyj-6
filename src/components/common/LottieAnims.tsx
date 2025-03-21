@@ -6,6 +6,7 @@ import aniDataUserSay from '@assets/anims/user-say.json'
 import aniDataAudioPlay from '@assets/anims/audio-play.json'
 import aniDataExcellent from '@assets/anims/excellent.json'
 import aniDataGoodEffort from '@assets/anims/good-effort.json'
+import aniDataFlyPaperAirplane from '@assets/anims/fly-paper-airplane.json'
 
 export function LottieScrollDownAni() {
   const defaultOptions = {
@@ -153,6 +154,36 @@ export function LottieGoodEffortAni({ width, height }: GoodEffortProps) {
     loop: false,
     autoplay: true,
     animationData: aniDataGoodEffort,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  }
+
+  return (
+    <>
+      <Lottie
+        isClickToPauseDisabled
+        options={defaultOptions}
+        width={width}
+        height={height}
+      />
+    </>
+  )
+}
+
+type FlyPaperAirplaneProps = {
+  width: number
+  height: number
+}
+
+export function LottieFlyPaperAirplane({
+  width,
+  height,
+}: FlyPaperAirplaneProps) {
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: aniDataFlyPaperAirplane,
     rendererSettings: {
       preserveAspectRatio: 'xMidYMid slice',
     },

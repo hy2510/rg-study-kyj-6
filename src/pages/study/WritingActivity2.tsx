@@ -42,6 +42,7 @@ import GoNextStepBox from '@components/study/writing-activity-02/GoNextStepBox'
 import StepOutro from '@components/study/writing-activity-02/StepOutro'
 import AIReport from '@components/study/writing-activity-02/AIReport'
 import GoNextStepBoxAI from '@components/study/writing-activity-02/GoNextStepBoxAI'
+import LoadingBox from '@components/study/writing-activity-02/LoadingBox'
 
 const STEP_TYPE = 'Writing Activity'
 
@@ -495,6 +496,8 @@ export default function WritingActivity2(props: IStudyData) {
                 {isMobile ? <Gap height={5} /> : <Gap height={15} />}
               </QuizBody>
 
+              {/* 로딩 */}
+              <LoadingBox />
               {isSideOpen && (
                 <StudySideMenu
                   isSideOpen={isSideOpen}

@@ -297,6 +297,37 @@
       transform: scale(0.9);
     }
   }
+  .gecButton {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    min-width: 150px;
+    text-align: center;
+    border-radius: 15px;
+    border-top: 1px solid #289ee4;
+    border-right: 1px solid #289ee4;
+    border-bottom: 3px solid #289ee4;
+    border-left: 1px solid #289ee4;
+    background: linear-gradient(
+      180deg,
+      #5fc3ff 0%,
+      #38b4fe 85.42%,
+      #5fc3ff 100%
+    );
+    color: #fff;
+    font-size: 1.1em;
+    font-family: 'Rg-B', sans-serif;
+    width: calc(100% - 40px);
+    padding: 15px 20px;
+    transform: scale(1);
+    transition: all 0.2s;
+    -webkit-tap-highlight-color: transparent;
+    &:active {
+      transform: scale(0.9);
+    }
+  }
   .goNextStepBox {
     display: flex;
     flex-direction: column;
@@ -319,5 +350,294 @@
   border-radius: 15px;
   img {
     width: 100%;
+  }
+}
+
+.aiFeedbackReport {
+  background-color: #fff;
+  border-radius: 15px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  .leftArea,
+  .rightArea {
+    padding: 20px;
+    max-height: 50vh;
+    overflow-y: auto;
+  }
+  .leftArea {
+    border-bottom: 1px dashed #d2d2d2;
+  }
+  .rightArea {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.wrongText {
+  cursor: pointer;
+  min-width: fit-content;
+  margin: 0 3px;
+  font-weight: 500;
+  position: relative;
+  &.green {
+    text-decoration: underline #16bd59;
+    text-decoration-thickness: 3px;
+
+    &:hover {
+      background-color: rgba(22, 189, 89, 0.2);
+    }
+  }
+  &.red {
+    text-decoration: underline #ed384e;
+    text-decoration-thickness: 3px;
+
+    &:hover {
+      background-color: rgba(237, 56, 78, 0.2);
+    }
+  }
+  &.blue {
+    text-decoration: underline #1a91ff;
+    text-decoration-thickness: 3px;
+
+    &:hover {
+      background-color: rgba(26, 145, 255, 0.2);
+    }
+  }
+  &.yellow {
+    text-decoration: underline #ffc940;
+    text-decoration-thickness: 3px;
+
+    &:hover {
+      background-color: rgba(255, 201, 64, 0.1);
+    }
+  }
+  &.gray {
+    color: gray;
+  }
+}
+
+.correctionHeader {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  border-bottom: 1px dashed #d2d2d2;
+  padding-bottom: 20px;
+  margin-bottom: 10px;
+  .txtHeader {
+    font-family: 'Rg-b', sans-serif;
+    font-size: 1.2em;
+    font-weight: 500;
+  }
+  .correctionItems {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    .correctionItem {
+      display: flex;
+      align-items: center;
+      column-gap: 5px;
+      font-size: 0.8em;
+      font-weight: 500;
+      color: #787878;
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        border-radius: 100px;
+        width: 20px;
+        height: 20px;
+        font-size: 0.8em;
+      }
+      &.green {
+        span {
+          background-color: #2ecc49;
+        }
+      }
+      &.red {
+        span {
+          background-color: #ed384e;
+        }
+      }
+      &.blue {
+        span {
+          background-color: #1a91ff;
+        }
+      }
+      &.yellow {
+        span {
+          background-color: #ffc940;
+        }
+      }
+    }
+  }
+}
+
+.correctionCard {
+  border: 1.5px solid #f2f2f2;
+  border-radius: 15px;
+  padding: 10px;
+  font-size: 0.9em;
+  .correctionCardHeader {
+    display: grid;
+    grid-template-columns: 1fr 30px;
+    .col1 {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      .word {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .dot {
+          width: 10px;
+          height: 10px;
+          border-radius: 100px;
+          margin-left: 5px;
+          &.green {
+            background-color: #2ecc49;
+          }
+          &.red {
+            background-color: #ed384e;
+          }
+          &.blue {
+            background-color: #1a91ff;
+          }
+          &.yellow {
+            background-color: #ffc940;
+          }
+        }
+        .txtWord {
+          display: flex;
+          align-items: center;
+          min-width: 50px;
+          min-height: 27px;
+          border-right: 1.5px solid #f2f2f2;
+          padding-right: 15px;
+        }
+      }
+      .shortDescription {
+        color: #727272;
+      }
+    }
+    .col2 {
+      .chevDownIcon {
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        background-image: url('/src/assets/images/icons/ico_chev_down_gray.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      .chevUpIcon {
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        background-image: url('/src/assets/images/icons/ico_chev_down_gray.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        transform: scaleY(-1);
+      }
+    }
+  }
+  .correctionCardContents {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+    .aiFeedbackContents {
+      padding: 12px;
+      border-radius: 12px;
+      background-color: #f4faff;
+      .label {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        color: #3ab6ff;
+        font-weight: 600;
+        font-size: 0.9em;
+        margin-bottom: 5px;
+        .icoMagicBlue {
+          width: 13px;
+          height: 14px;
+          background-image: url('/src/assets/images/icons/ico_magic_blue.svg');
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: 13px;
+        }
+      }
+      .txtComment {
+        color: #4f4f4f;
+      }
+    }
+    .txtLabel {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      font-weight: 500;
+      .inCorrectText {
+        text-decoration: line-through;
+        color: #727272;
+      }
+    }
+
+    .wrapperExample {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      font-weight: 500;
+      cursor: pointer;
+
+      .chevDownIcon {
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        background-image: url('/src/assets/images/icons/ico_chev_down_gray.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      .chevUpIcon {
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        background-image: url('/src/assets/images/icons/ico_chev_down_gray.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        transform: scaleY(-1);
+      }
+    }
+
+    .example {
+      background-color: #f8f8f8;
+      padding: 12px;
+      border-radius: 12px;
+    }
+  }
+}
+
+.loadingBox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  background-color: rgba($color: #000, $alpha: 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .messageBox {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 0.9em;
   }
 }
