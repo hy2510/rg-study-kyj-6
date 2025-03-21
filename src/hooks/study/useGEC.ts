@@ -13,7 +13,7 @@ export default function useGEC() {
     }
 
     result = await axios
-      .post(`${API_URL}/v1/gec/ap_style_title`, data, {
+      .post(`${API_URL}/v1/gec`, data, {
         headers: {
           'X-API-Key': API_KEY,
           'Content-Type': 'application/x-www-form-urlencoded',

@@ -1,5 +1,6 @@
 import writingActivityCSS from '@stylesheets/writing-activity.module.scss'
 import writingActivityCSSMobile from '@stylesheets/mobile/writing-activity.module.scss'
+
 import icoMagic from '@assets/images/icons/ico_magic.svg'
 
 import MobileDetect from 'mobile-detect'

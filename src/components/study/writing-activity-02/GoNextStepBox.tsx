@@ -1,6 +1,8 @@
 import writingActivityCSS from '@stylesheets/writing-activity.module.scss'
 import writingActivityCSSMobile from '@stylesheets/mobile/writing-activity.module.scss'
 
+import { IWritingActivity2Writing } from '@interfaces/IWritingActivity'
+
 import MobileDetect from 'mobile-detect'
 const md = new MobileDetect(navigator.userAgent)
 const isMobile = md.phone()
@@ -10,6 +12,7 @@ import BtnSubmit from './BtnSubmit'
 import BtnGEC from './BtnGEC'
 
 type GoNextStepBoxProps = {
+  type: IWritingActivity2Writing['Type']
   isSubmit: boolean
   wordMinCount: number
   wordMaxCount: number
@@ -22,6 +25,7 @@ type GoNextStepBoxProps = {
 const style = isMobile ? writingActivityCSSMobile : writingActivityCSS
 
 export default function GoNextStepBox({
+  type,
   isSubmit,
   wordMinCount,
   wordMaxCount,
@@ -41,8 +45,11 @@ export default function GoNextStepBox({
 
       <BtnSave saveAnswer={saveAnswer} />
 
-      {/* <BtnSubmit isSubmit={isSubmit} submitAnswer={submitAnswer} /> */}
-      <BtnGEC getGEC={getGEC} />
+      {type === 'No Revision' ? (
+        <BtnGEC getGEC={getGEC} />
+      ) : (
+        <BtnSubmit isSubmit={isSubmit} submitAnswer={submitAnswer} />
+      )}
     </div>
   )
 }

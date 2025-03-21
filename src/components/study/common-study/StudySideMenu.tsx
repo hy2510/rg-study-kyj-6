@@ -1,6 +1,7 @@
 import { useContext, useState } from 'react'
 import { AppContext, AppContextProps } from '@contexts/AppContext'
 import { useTranslation } from 'react-i18next'
+import { isIOS } from 'react-device-detect'
 
 import sideMenuCSS from '@stylesheets/side-menu.module.scss'
 
@@ -126,23 +127,25 @@ export default function StudySideMenu({
               />
             </div>
             <div className={sideMenuCSS.study_side_menu_area_bottom}>
-              <div className={sideMenuCSS.wrapper_correct_sound}>
-                <div className="txt">Correct Sound</div>
-                <input
-                  type="range"
-                  min={0}
-                  max={100}
-                  step={5}
-                  onChange={(e) => {
-                    setBottomPopupVolume(Number(e.currentTarget.value))
-                    localStorage.setItem(
-                      'bottomPopupVolume',
-                      e.currentTarget.value,
-                    )
-                  }}
-                  value={bottomPopupVolume}
-                />
-              </div>
+              {!isIOS && (
+                <div className={sideMenuCSS.wrapper_correct_sound}>
+                  <div className="txt">Correct Sound</div>
+                  <input
+                    type="range"
+                    min={0}
+                    max={100}
+                    step={5}
+                    onChange={(e) => {
+                      setBottomPopupVolume(Number(e.currentTarget.value))
+                      localStorage.setItem(
+                        'bottomPopupVolume',
+                        e.currentTarget.value,
+                      )
+                    }}
+                    value={bottomPopupVolume}
+                  />
+                </div>
+              )}
               <div
                 className={sideMenuCSS.btn_exit}
                 onClick={() => {

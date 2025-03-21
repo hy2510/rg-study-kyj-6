@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from 'react'
+import { useEffect, useState, useContext, useRef } from 'react'
 import { AppContext, AppContextProps } from '@contexts/AppContext'
 
 import { saveWritingActivity } from '@services/studyApi'
@@ -40,8 +40,8 @@ import TextQuestion from '@components/study/writing-activity-02/TextQuestion'
 import WritingArea from '@components/study/writing-activity-02/WritingArea'
 import GoNextStepBox from '@components/study/writing-activity-02/GoNextStepBox'
 import StepOutro from '@components/study/writing-activity-02/StepOutro'
-import AiFeedbackReport from '@components/study/writing-activity-02/AiFeedbackReport'
-import GoNextStepAiBox from '@components/study/writing-activity-02/GoNextStepAiBox'
+import AIReport from '@components/study/writing-activity-02/AIReport'
+import GoNextStepBoxAI from '@components/study/writing-activity-02/GoNextStepBoxAI'
 
 const STEP_TYPE = 'Writing Activity'
 
@@ -77,7 +77,9 @@ export default function WritingActivity2(props: IStudyData) {
   const [answerData, setAnswerData] = useState<string[]>([])
   const [isSubmit, setIsSubmit] = useState<boolean>(false)
 
+  const isWorking = useRef(false)
   const { gec } = useGEC()
+  const [GECResult, setGECResult] = useState<IResultGEC>()
 
   useEffect(() => {
     if (!isStepIntro && quizData) {
@@ -168,6 +170,8 @@ export default function WritingActivity2(props: IStudyData) {
       }
     }
   }, [quizState, answerData])
+
+  useEffect(() => {}, [])
 
   // 로딩
   if (!quizData) return <>Loading...</>
@@ -353,11 +357,32 @@ export default function WritingActivity2(props: IStudyData) {
     setSideOpen(state)
   }
 
+  /**
+   * AI 첨삭
+   */
   const getGEC = async () => {
-    const writedText = answerData.join('\n')
-    const gecResult: IResultGEC = await gec(writedText)
+    if (!isWorking.current) {
+      isWorking.current = true
 
-    console.log(gecResult)
+      try {
+        const writedText = answerData.join('\n')
+        const gecResult: IResultGEC = await gec(writedText)
+
+        setGECResult(gecResult)
+        console.log(gecResult)
+      } catch (e) {
+        alert('한글은 포함할 수 없습니다.')
+        isWorking.current = false
+      }
+    }
+  }
+
+  /**
+   * AI 첨삭 데이터 초기화
+   */
+  const resetGEC = () => {
+    setGECResult(undefined)
+    isWorking.current = false
   }
 
   return (
@@ -417,48 +442,54 @@ export default function WritingActivity2(props: IStudyData) {
                   typeCSS={style.writingActivity2}
                   containerCSS={style.container}
                 >
-                  {/* 탭 */}
-                  {/* <WrapperTab
-                    currentTabIndex={currentTabIndex}
-                    questionData={quizData.Writing.Question}
-                    changeTabNo={changeTabNo}
-                  /> */}
+                  {GECResult ? (
+                    <>
+                      <AIReport GECData={GECResult} />
 
-                  {/* 탭에 따른 질문 */}
-                  {/* <TextQuestion
-                    question={quizData.Writing.Question[currentTabIndex]}
-                  /> */}
+                      {/* 하단 버튼 및 글자수 영역 */}
+                      <GoNextStepBoxAI
+                        wordMinCount={quizData.Writing.WordMinCount}
+                        wordMaxCount={quizData.Writing.WordMaxCount}
+                        answerLength={getAnswerLength()}
+                        submitAnswer={submitAnswer}
+                        resetGEC={resetGEC}
+                      />
+                    </>
+                  ) : (
+                    <>
+                      {/* 탭 */}
+                      <WrapperTab
+                        currentTabIndex={currentTabIndex}
+                        questionData={quizData.Writing.Question}
+                        changeTabNo={changeTabNo}
+                      />
 
-                  {/* 글쓰기 영역 */}
-                  {/* <WritingArea
-                    wordMinCount={quizData.Writing.WordMinCount}
-                    wordMaxCount={quizData.Writing.WordMaxCount}
-                    answerData={answerData[currentTabIndex]}
-                    onChangeHandler={onChangeHandler}
-                  /> */}
+                      {/* 탭에 따른 질문 */}
+                      <TextQuestion
+                        question={quizData.Writing.Question[currentTabIndex]}
+                      />
 
-                  {/* 하단 버튼 및 글자수 영역 */}
-                  {/* <GoNextStepBox
-                    isSubmit={isSubmit}
-                    wordMinCount={quizData.Writing.WordMinCount}
-                    wordMaxCount={quizData.Writing.WordMaxCount}
-                    answerLength={getAnswerLength()}
-                    saveAnswer={saveAnswer}
-                    submitAnswer={submitAnswer}
-                    getGEC={getGEC}
-                  /> */}
+                      {/* 글쓰기 영역 */}
+                      <WritingArea
+                        wordMinCount={quizData.Writing.WordMinCount}
+                        wordMaxCount={quizData.Writing.WordMaxCount}
+                        answerData={answerData[currentTabIndex]}
+                        onChangeHandler={onChangeHandler}
+                      />
 
-                  {/* AI 피드백 결과 */}
-                  <AiFeedbackReport />
-                  <GoNextStepAiBox
-                    isSubmit={isSubmit}
-                    wordMinCount={quizData.Writing.WordMinCount}
-                    wordMaxCount={quizData.Writing.WordMaxCount}
-                    answerLength={getAnswerLength()}
-                    saveAnswer={saveAnswer}
-                    submitAnswer={submitAnswer}
-                    getGEC={getGEC}
-                  />
+                      {/* 하단 버튼 및 글자수 영역 */}
+                      <GoNextStepBox
+                        type={quizData.Writing.Type}
+                        isSubmit={isSubmit}
+                        wordMinCount={quizData.Writing.WordMinCount}
+                        wordMaxCount={quizData.Writing.WordMaxCount}
+                        answerLength={getAnswerLength()}
+                        saveAnswer={saveAnswer}
+                        submitAnswer={submitAnswer}
+                        getGEC={getGEC}
+                      />
+                    </>
+                  )}
                 </Container>
 
                 {isMobile ? <Gap height={5} /> : <Gap height={15} />}

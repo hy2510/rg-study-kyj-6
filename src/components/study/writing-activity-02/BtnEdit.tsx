@@ -5,12 +5,16 @@ import MobileDetect from 'mobile-detect'
 const md = new MobileDetect(navigator.userAgent)
 const isMobile = md.phone()
 
-type BtnSaveProps = {
-  saveAnswer: () => Promise<void>
-}
-
 const style = isMobile ? writingActivityCSSMobile : writingActivityCSS
 
-export default function BtnEdit({ saveAnswer }: BtnSaveProps) {
-  return <div className={style.saveButton}>Edit</div>
+type BtnSaveProps = {
+  resetGEC: () => void
+}
+
+export default function BtnEdit({ resetGEC }: BtnSaveProps) {
+  return (
+    <div className={style.saveButton} onClick={() => resetGEC()}>
+      Edit
+    </div>
+  )
 }

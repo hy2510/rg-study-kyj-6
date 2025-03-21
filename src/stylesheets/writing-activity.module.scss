@@ -379,21 +379,40 @@
 .wrongText {
   cursor: pointer;
   min-width: fit-content;
-  margin: 0 5px;
+  margin: 0 3px;
   font-weight: 500;
   position: relative;
   &.green {
-    color: #2ecc49;
+    text-decoration: underline #16bd59;
+    text-decoration-thickness: 3px;
+
+    &:hover {
+      background-color: rgba(22, 189, 89, 0.2);
+    }
   }
   &.red {
-    color: #ed384e;
+    text-decoration: underline #ed384e;
+    text-decoration-thickness: 3px;
+
+    &:hover {
+      background-color: rgba(237, 56, 78, 0.2);
+    }
   }
   &.blue {
-    color: #1a91ff;
-    margin: 0 5px 0 0;
+    text-decoration: underline #1a91ff;
+    text-decoration-thickness: 3px;
+
+    &:hover {
+      background-color: rgba(26, 145, 255, 0.2);
+    }
   }
   &.yellow {
-    color: #ffc940;
+    text-decoration: underline #ffc940;
+    text-decoration-thickness: 3px;
+
+    &:hover {
+      background-color: rgba(255, 201, 64, 0.1);
+    }
   }
   &.gray {
     color: gray;
@@ -466,6 +485,7 @@
     display: grid;
     grid-template-columns: 1fr 30px;
     .col1 {
+      cursor: pointer;
       display: flex;
       align-items: center;
       gap: 15px;
@@ -510,7 +530,7 @@
         cursor: pointer;
         width: 30px;
         height: 30px;
-        background-image: url('src/assets/images/icons/ico_chev_down_gray.svg');
+        background-image: url('/src/assets/images/icons/ico_chev_down_gray.svg');
         background-position: center;
         background-repeat: no-repeat;
       }
@@ -518,7 +538,7 @@
         cursor: pointer;
         width: 30px;
         height: 30px;
-        background-image: url('src/assets/images/icons/ico_chev_down_gray.svg');
+        background-image: url('/src/assets/images/icons/ico_chev_down_gray.svg');
         background-position: center;
         background-repeat: no-repeat;
         transform: scaleY(-1);
@@ -566,6 +586,34 @@
         color: #727272;
       }
     }
+
+    .wrapperExample {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      font-weight: 500;
+      cursor: pointer;
+
+      .chevDownIcon {
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        background-image: url('/src/assets/images/icons/ico_chev_down_gray.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      .chevUpIcon {
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        background-image: url('/src/assets/images/icons/ico_chev_down_gray.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        transform: scaleY(-1);
+      }
+    }
+
     .example {
       background-color: #f8f8f8;
       padding: 12px;

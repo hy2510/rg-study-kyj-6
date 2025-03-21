@@ -4,7 +4,7 @@ type IExample = {
 }
 
 type ITag = {
-  category: string
+  category: 'Grammar' | 'Mechanics' | 'Other' | 'Punctuations'
   example: IExample[]
   skill: string
   skill_ko: string
@@ -25,4 +25,4 @@ type IResultGEC = {
   text: string
 }
 
-export type { IResultGEC }
+export type { IResultGEC, IMatch, ITag }

@@ -5,32 +5,25 @@ import MobileDetect from 'mobile-detect'
 const md = new MobileDetect(navigator.userAgent)
 const isMobile = md.phone()
 
-import BtnSave from './BtnSave'
-import BtnSubmit from './BtnSubmit'
-import BtnGEC from './BtnGEC'
 import BtnEdit from './BtnEdit'
+import BtnSubmit from './BtnSubmit'
 
 type GoNextStepBoxProps = {
-  isAiFeedbackResult?: boolean
-  isSubmit: boolean
   wordMinCount: number
   wordMaxCount: number
   answerLength: number
-  saveAnswer: () => Promise<void>
   submitAnswer: () => void
-  getGEC: () => void
+  resetGEC: () => void
 }
 
 const style = isMobile ? writingActivityCSSMobile : writingActivityCSS
 
 export default function GoNextStepAiBox({
-  isSubmit,
   wordMinCount,
   wordMaxCount,
   answerLength,
-  saveAnswer,
   submitAnswer,
-  getGEC,
+  resetGEC,
 }: GoNextStepBoxProps) {
   return (
     <div className={style.goNextStepBox}>
@@ -41,10 +34,8 @@ export default function GoNextStepAiBox({
         <div className={style.words}>• The number of words: {answerLength}</div>
       </div>
 
-      {/* <BtnSave saveAnswer={saveAnswer} /> */}
-      <BtnEdit saveAnswer={saveAnswer} />
+      <BtnEdit resetGEC={resetGEC} />
       <BtnSubmit isSubmit={true} submitAnswer={submitAnswer} />
-      {/* <BtnGEC getGEC={getGEC} /> */}
     </div>
   )
 }
